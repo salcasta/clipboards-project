@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Clipboards</h1>
+
+<div id="clipboards">
+  <% @clipboards.each do |clipboard| %>
+    <%= render clipboard %>
+    <p>
+      <%= link_to "Show this clipboard", clipboard %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New clipboard", new_clipboard_path %>

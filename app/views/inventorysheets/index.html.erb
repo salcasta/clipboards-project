@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Inventorysheets</h1>
+
+<div id="inventorysheets">
+  <% @inventorysheets.each do |inventorysheet| %>
+    <%= render inventorysheet %>
+    <p>
+      <%= link_to "Show this inventorysheet", inventorysheet %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New inventorysheet", new_inventorysheet_path %>
