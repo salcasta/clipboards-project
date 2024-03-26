@@ -1,2 +1,2 @@
-json.extract! item, :id, :category, :product_type, :label, :unit, :price, :pack_size, :item_size, :pack_cost, :user_id, :area, :vendor_id, :vendor_serial_number, :inventory_sheets_id, :created_at, :updated_at
+json.extract! item, :id, :category, :product_type, :label, :unit, :price, :pack_size, :item_size, :pack_cost, :user_id, :area, :vendor_id, :vendor_serial_number, :inventory_sheets_id, :rank, :par_level, :comment :created_at, :updated_at
 json.url item_url(item, format: :json)
