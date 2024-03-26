@@ -4,7 +4,6 @@
 #
 #  id               :integer          not null, primary key
 #  company_name     :string
-#  items_count      :integer
 #  rep_email        :string
 #  rep_name         :string
 #  rep_phone_number :string
@@ -12,4 +11,5 @@
 #  updated_at       :datetime         not null
 #
 class Vendor < ApplicationRecord
+  has_many  :items, class_name: "Item", foreign_key: "vendor_id", dependent: :nullify
 end

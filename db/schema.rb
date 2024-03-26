@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_25_214738) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_26_172951) do
   create_table "clipboards", force: :cascade do |t|
     t.string "area"
     t.integer "user_id"
@@ -24,8 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_25_214738) do
     t.boolean "is_complete"
     t.integer "user_id"
     t.integer "clipboard_id"
-    t.integer "items_count"
-    t.integer "orders_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -80,7 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_25_214738) do
     t.string "rep_name"
     t.string "rep_email"
     t.string "rep_phone_number"
-    t.integer "items_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

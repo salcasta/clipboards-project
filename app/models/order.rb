@@ -14,4 +14,6 @@
 #  item_id             :integer
 #
 class Order < ApplicationRecord
+  belongs_to :item, required: true, class_name: "Item", foreign_key: "item_id"
+  belongs_to :inventory_sheets, required: true, class_name: "Inventorysheet", foreign_key: "inventory_sheets_id", counter_cache: true
 end
