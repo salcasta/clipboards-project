@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @inventorysheet %>
+
+<div>
+  <%= link_to "Edit this inventorysheet", edit_inventorysheet_path(@inventorysheet) %> |
+  <%= link_to "Back to inventorysheets", inventorysheets_path %>
+
+  <%= button_to "Destroy this inventorysheet", @inventorysheet, method: :delete %>
+</div>
