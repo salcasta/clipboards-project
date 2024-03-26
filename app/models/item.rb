@@ -5,12 +5,15 @@
 #  id                   :integer          not null, primary key
 #  area                 :string
 #  category             :string
+#  comment              :text
 #  item_size            :string
 #  label                :string
 #  pack_cost            :integer
 #  pack_size            :integer
+#  par_level            :integer
 #  price                :integer
 #  product_type         :string
+#  rank                 :integer
 #  unit                 :string
 #  vendor_serial_number :string
 #  created_at           :datetime         not null
