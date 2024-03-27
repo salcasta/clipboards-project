@@ -27,16 +27,15 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id%>
   </div>
 
   <div>
     <%= form.label :clipboard_id, style: "display: block" %>
-    <%= form.number_field :clipboard_id %>
+    <%= form.select :clipboard_id, @clipboards.map { |clipboard| [clipboard.area, clipboard.id]} %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Update inventory sheet" %>
   </div>
 <% end %>

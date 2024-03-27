@@ -13,10 +13,12 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets/new
   def new
     @inventorysheet = Inventorysheet.new
+    @clipboards = Clipboard.all
   end
 
   # GET /inventorysheets/1/edit
   def edit
+    @clipboards = Clipboard.all
   end
 
   # POST /inventorysheets or /inventorysheets.json
