@@ -1,1 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <%= link_to "Clipboards", root_path, class: "navbar-brand" %>
 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to clipboards_path, class: "nav-link" do %>
+              <i class="fa-solid fa-clipboard-list"></i>
+
+              Clipboards
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to inventorysheets_path, class: "nav-link" do %>
+              <i class="fa-solid fa-sheet-plastic"></i>
+
+              Inventory Sheets 
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to vendors_path, class: "nav-link" do %>
+              <i class="fa-solid fa-image-portrait"></i>
+
+              Vendors
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to items_path, class: "nav-link" do %>
+            <i class="fas fa-plus-circle"></i>
+
+            Add Item
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to edit_user_registration_path, class: "nav-link" do %>
+            <i class="fa-solid fa-house-chimney-user"></i>
+
+            Your profile
+          <% end %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.organization_name %>
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+</nav>
