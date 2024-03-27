@@ -67,6 +67,6 @@ class InventorysheetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inventorysheet_params
-      params.require(:inventorysheet).permit(:date, :is_holiday, :is_complete, :user_id, :clipboard_id, :items_count, :orders_count)
+      params.require(:inventorysheet).permit(:date, :is_holiday, :is_complete, :user_id, :clipboard_id)
     end
 end

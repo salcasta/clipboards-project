@@ -40,23 +40,13 @@
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= item.user_id %>
-  </p>
-
-  <p>
     <strong>Area:</strong>
     <%= item.area %>
   </p>
 
   <p>
     <strong>Vendor:</strong>
-    <%= item.vendor_id %>
-  </p>
-
-  <p>
-    <strong>Inventory sheets:</strong>
-    <%= item.inventory_sheets_id %>
+     <%= item.vendor&.company_name || 'None Selected' %>
   </p>
 
   <p>
