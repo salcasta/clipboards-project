@@ -13,12 +13,16 @@
 
   <div>
     <%= form.label :area, style: "display: block" %>
-    <%= form.text_field :area %>
+    <%= form.select :area, ["bar", "produce", "meats"] %>
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
+    <label>or add your own area</label>
+    <%= form.text_field :area, style: "display: block" %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div>
