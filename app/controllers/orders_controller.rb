@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order = Order.new(item_id: params[:item_id], inventory_sheets_id: params[:inventorysheet_id])
   end
 
   # GET /orders/1/edit
