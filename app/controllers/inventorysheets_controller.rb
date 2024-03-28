@@ -8,6 +8,8 @@ class InventorysheetsController < ApplicationController
 
   # GET /inventorysheets/1 or /inventorysheets/1.json
   def show
+    @inventorysheet = Inventorysheet.find(params[:id])
+    @items = Item.where(area: @inventorysheet.clipboard.area)
   end
 
   # GET /inventorysheets/new
