@@ -1,3 +1,12 @@
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+  }
+</style>
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @inventorysheet %>
@@ -8,3 +17,36 @@
 
   <%= button_to "Destroy this inventory sheet", @inventorysheet, method: :delete %>
 </div>
+
+<h2>Items</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Category</th>
+      <th>Product Type</th>
+      <th>Label</th>
+      <th>Unit</th>
+      <th>Price</th>
+      <th>Pack Size</th>
+      <th>Item Size</th>
+      <th>Pack Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= item.category %></td>
+        <td><%= item.product_type %></td>
+        <td><%= item.label %></td>
+        <td><%= item.unit %></td>
+        <td><%= item.price %></td>
+        <td><%= item.pack_size %></td>
+        <td><%= item.item_size %></td>
+        <td><%= item.pack_cost %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_27_191738) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_28_184752) do
   create_table "clipboards", force: :cascade do |t|
     t.string "area"
     t.integer "user_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_27_191738) do
     t.integer "par_level"
     t.integer "rank"
     t.text "comment"
+    t.integer "inventory_sheets_id"
   end
 
   create_table "orders", force: :cascade do |t|

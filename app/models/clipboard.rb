@@ -11,4 +11,5 @@
 class Clipboard < ApplicationRecord
   belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
   has_many  :inventorysheets, class_name: "Inventorysheet", foreign_key: "clipboard_id", dependent: :nullify
+  has_many  :items, class_name: "Item", foreign_key: "clipboard_id", dependent: :nullify
 end
