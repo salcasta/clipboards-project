@@ -24,28 +24,20 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Category</th>
-      <th>Product Type</th>
       <th>Label</th>
       <th>Unit</th>
-      <th>Price</th>
       <th>Pack Size</th>
-      <th>Item Size</th>
-      <th>Pack Cost</th>
+      <th>Rank</th>
     </tr>
   </thead>
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.id %></td>
-        <td><%= item.category %></td>
-        <td><%= item.product_type %></td>
+        <td><%= link_to item.id, edit_item_path(item) %></td>
         <td><%= item.label %></td>
         <td><%= item.unit %></td>
-        <td><%= item.price %></td>
         <td><%= item.pack_size %></td>
-        <td><%= item.item_size %></td>
-        <td><%= item.pack_cost %></td>
+        <td><%= item.rank %></td>
       </tr>
     <% end %>
   </tbody>
