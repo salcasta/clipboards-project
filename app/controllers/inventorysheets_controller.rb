@@ -13,10 +13,12 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets/new
   def new
     @inventorysheet = Inventorysheet.new
+    @clipboards = Clipboard.all
   end
 
   # GET /inventorysheets/1/edit
   def edit
+    @clipboards = Clipboard.all
   end
 
   # POST /inventorysheets or /inventorysheets.json
@@ -65,6 +67,6 @@ class InventorysheetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inventorysheet_params
-      params.require(:inventorysheet).permit(:date, :is_holiday, :is_complete, :user_id, :clipboard_id, :items_count, :orders_count)
+      params.require(:inventorysheet).permit(:date, :is_holiday, :is_complete, :user_id, :clipboard_id)
     end
 end
