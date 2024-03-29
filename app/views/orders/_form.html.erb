@@ -12,25 +12,30 @@
   <% end %>
 
   <div>
-    <%= form.label :item_id, style: "display: block" %>
-    <%= form.number_field :item_id %>
+    <%= form.hidden_field :item_id, style: "display: block" %>
   </div>
 
   <div>
-    <%= form.label :inventory_sheets_id, style: "display: block" %>
-    <%= form.number_field :inventory_sheets_id %>
-  </div>
-
-  <div>
-    <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+    <%= form.hidden_field :inventory_sheets_id, style: "display: block" %>
   </div>
 
   <div>
     <%= form.label :on_hand, style: "display: block" %>
     <%= form.number_field :on_hand %>
   </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
   
+  <% if @item %>
+  <div>
+    <strong>Par Level:</strong>
+    <%= @item.par_level || "None provided" %>
+  </div>
+  <% end %>
+
   <div>
     <%= form.submit %>
   </div>
