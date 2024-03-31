@@ -8,24 +8,30 @@ class OrdersController < ApplicationController
 
   # GET /orders/1 or /orders/1.json
   def show
+    @order = Order.find(params[:id])
+    @item = Item.find(@order.item_id)
   end
 
   # GET /orders/new
   def new
-    #@order = Order.new(item_id: params[:item_id], inventory_sheets_id: params[:inventorysheet_id])
+    @order = Order.find_by(item_id: params[:item_id], inventory_sheets_id: params[:inventorysheet_id])
 
-    #@item = Item.find(params[:item_id])
+    if @order
+      redirect_to edit_order_path(@order)
+    else
+      @order = Order.new(inventory_sheets_id: params[:inventorysheet_id])
 
-    @order = Order.new(inventory_sheets_id: params[:inventorysheet_id])
-  
-    if params[:item_id].present?
-      @item = Item.find(params[:item_id])
-      @order.item_id = @item.id
+      if params[:item_id].present?
+        @item = Item.find(params[:item_id])
+        @order.item_id = @item.id
+      end
     end
   end
 
   # GET /orders/1/edit
   def edit
+      @order = Order.find(params[:id])
+      @item = Item.find(@order.item_id)
   end
 
   # POST /orders or /orders.json
