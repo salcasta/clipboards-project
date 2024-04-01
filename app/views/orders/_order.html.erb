@@ -7,22 +7,22 @@
 
   <p>
     <strong>Quantity:</strong>
-    <%= "#{order.quantity} x #{@item.pack_size} (pack size) = #{order.quantity * @item.pack_size}" %>
+    <%= "#{order.quantity} x #{order.item.pack_size} (pack size) = #{order.quantity * order.item.pack_size}"%>
   </p>
 
   <div>
     <strong>Par Level:</strong>
-    <%= @item.par_level || "None provided" %>
+    <%= order.item.par_level || "None provided" %>
   </div>
 
   <div>
     <strong>Unit:</strong>
-    <%= @item.unit || "None provided" %>
+    <%= order.item.unit || "None provided" %>
   </div>
 
-   <div>
+  <div>
     <strong>Pack Size:</strong>
-    <%= @item.pack_size || "None provided" %>
+    <%= order.item.pack_size || "None provided" %>
   </div>
 
 </div>
