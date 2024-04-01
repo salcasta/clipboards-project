@@ -15,6 +15,7 @@ class InventorysheetsController < ApplicationController
     @inventorysheet = Inventorysheet.find(params[:id])
     @items = Item.where(area: @inventorysheet.clipboard.area)
     @clipboard = @inventorysheet.clipboard
+    @items_ordered = @inventorysheet.orders.includes(:item)
   end
 
   # GET /inventorysheets/new
