@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by(item_id: params[:item_id], inventory_sheets_id: params[:inventorysheet_id])
 
     if @order
-      redirect_to edit_order_path(@order)
+      redirect_to @order
     else
       @order = Order.new(inventory_sheets_id: params[:inventorysheet_id])
 

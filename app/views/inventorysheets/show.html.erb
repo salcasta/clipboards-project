@@ -39,7 +39,7 @@
         <td><%= item.unit %></td>
         <td><%= item.pack_size %></td>
         <td><%= item.rank %></td>
-        <td><%= link_to 'New Order', new_order_path(item_id: item.id, inventorysheet_id: @inventorysheet.id) %></td>
+        <td><%= link_to 'Make/Edit an order', new_order_path(item_id: item.id, inventorysheet_id: @inventorysheet.id) %></td>
       </tr>
     <% end %>
   </tbody>
