@@ -11,16 +11,12 @@
     </div>
   <% end %>
 
-  <%# Hide once everything is set up %>
   <div>
-    <%= form.label :item_id, style: "display: block" %>
-    <%= form.number_field :item_id %>
+    <%= form.hidden_field :item_id, style: "display: block" %>
   </div>
 
-  <%# Hide once everything is set  %>
   <div>
-    <%= form.label :inventory_sheets_id, style: "display: block" %>
-    <%= form.number_field :inventory_sheets_id %>
+    <%= form.hidden_field :inventory_sheets_id, style: "display: block" %>
   </div>
 
   <div>

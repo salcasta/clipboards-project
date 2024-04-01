@@ -10,16 +10,6 @@
     <%= "#{order.quantity} x #{@item.pack_size} (pack size) = #{order.quantity * @item.pack_size}" %>
   </p>
 
-  <p>
-    <strong>Item ID:</strong>
-    <%= order.item_id %>
-  </p>
-
-  <p>
-    <strong>Inventory Sheet ID:</strong>
-    <%= order.inventory_sheets_id %>
-  </p>
-
   <div>
     <strong>Par Level:</strong>
     <%= @item.par_level || "None provided" %>
