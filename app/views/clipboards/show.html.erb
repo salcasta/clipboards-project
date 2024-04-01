@@ -4,7 +4,8 @@
 
 <div>
   <%= link_to "Edit this clipboard", edit_clipboard_path(@clipboard) %> |
-  <%= link_to "Back to clipboards", clipboards_path %>
+  <%= link_to "Back to clipboards", clipboards_path %> |
+  <%= link_to "View #{@clipboard.area} inventory sheets", inventorysheets_path(clipboard_id: @clipboard.id)%>
 
   <%= button_to "Destroy this clipboard", @clipboard, method: :delete %>
 </div>
