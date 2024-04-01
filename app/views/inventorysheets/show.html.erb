@@ -28,6 +28,7 @@
       <th>Unit</th>
       <th>Pack Size</th>
       <th>Rank</th>
+      <th>Orders</th>
     </tr>
   </thead>
   <tbody>
@@ -38,6 +39,7 @@
         <td><%= item.unit %></td>
         <td><%= item.pack_size %></td>
         <td><%= item.rank %></td>
+        <td><%= link_to 'Make/Edit an order', new_order_path(item_id: item.id, inventorysheet_id: @inventorysheet.id) %></td>
       </tr>
     <% end %>
   </tbody>

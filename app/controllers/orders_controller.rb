@@ -8,15 +8,30 @@ class OrdersController < ApplicationController
 
   # GET /orders/1 or /orders/1.json
   def show
+    @order = Order.find(params[:id])
+    @item = Item.find(@order.item_id)
   end
 
   # GET /orders/new
   def new
-    @order = Order.new
+    @order = Order.find_by(item_id: params[:item_id], inventory_sheets_id: params[:inventorysheet_id])
+
+    if @order
+      redirect_to @order
+    else
+      @order = Order.new(inventory_sheets_id: params[:inventorysheet_id])
+
+      if params[:item_id].present?
+        @item = Item.find(params[:item_id])
+        @order.item_id = @item.id
+      end
+    end
   end
 
   # GET /orders/1/edit
   def edit
+      @order = Order.find(params[:id])
+      @item = Item.find(@order.item_id)
   end
 
   # POST /orders or /orders.json
@@ -52,7 +67,7 @@ class OrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
+      format.html { redirect_to inventorysheets_url, notice: "Order was successfully destroyed." }
       format.json { head :no_content }
     end
   end
