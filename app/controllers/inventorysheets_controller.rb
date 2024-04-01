@@ -3,13 +3,18 @@ class InventorysheetsController < ApplicationController
 
   # GET /inventorysheets or /inventorysheets.json
   def index
-    @inventorysheets = Inventorysheet.all
+    if params[:clipboard_id]
+      @inventorysheets = Inventorysheet.where(clipboard_id: params[:clipboard_id])
+    else
+      @inventorysheets = Inventorysheet.all
+    end    
   end
 
   # GET /inventorysheets/1 or /inventorysheets/1.json
   def show
     @inventorysheet = Inventorysheet.find(params[:id])
     @items = Item.where(area: @inventorysheet.clipboard.area)
+    @clipboard = @inventorysheet.clipboard
   end
 
   # GET /inventorysheets/new
