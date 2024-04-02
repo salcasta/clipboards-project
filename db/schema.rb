@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_28_184752) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_02_165930) do
   create_table "clipboards", force: :cascade do |t|
     t.string "area"
     t.integer "user_id"
@@ -51,8 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_28_184752) do
   create_table "orders", force: :cascade do |t|
     t.integer "item_id"
     t.integer "inventory_sheets_id"
-    t.integer "quantity"
-    t.integer "on_hand"
+    t.float "quantity"
+    t.float "on_hand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

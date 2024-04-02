@@ -11,13 +11,6 @@
 
 <%= render @inventorysheet %>
 
-<div>
-  <%= link_to "Edit this inventory sheet", edit_inventorysheet_path(@inventorysheet) %> |
-  <%= link_to "Back to #{@clipboard.area} inventory sheets", inventorysheets_path(clipboard_id: @clipboard.id) %>
-
-  <%= button_to "Destroy this inventory sheet", @inventorysheet, method: :delete %>
-</div>
-
 <h2>Items</h2>
 
 <table>
@@ -73,3 +66,11 @@
     <% end %>
   </tbody>
 </table>
+
+
+<div>
+  <%= link_to "Edit this inventory sheet", edit_inventorysheet_path(@inventorysheet) %> |
+  <%= link_to "Back to #{@clipboard.area} inventory sheets", inventorysheets_path(clipboard_id: @clipboard.id) %>
+
+  <%= button_to "Destroy this inventory sheet", @inventorysheet, method: :delete %>
+</div>
