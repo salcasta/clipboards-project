@@ -1,13 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Clipboards</h1>
+<div class="d-flex justify-content-center">
+  <h1 class="">Clipboards</h1>
+</div>
 
 <div id="clipboards">
   <% @clipboards.each do |clipboard| %>
     <%= render clipboard %>
-    <p>
-      <%= link_to "Show this clipboard", clipboard %>
-    </p>
   <% end %>
 </div>
 
