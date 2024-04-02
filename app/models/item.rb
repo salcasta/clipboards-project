@@ -17,6 +17,7 @@
 #  unit                :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  clipboard_id        :integer
 #  inventory_sheets_id :integer
 #  user_id             :integer
 #  vendor_id           :integer
