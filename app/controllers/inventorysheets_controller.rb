@@ -15,6 +15,7 @@ class InventorysheetsController < ApplicationController
     @inventorysheet = Inventorysheet.find(params[:id])
     @items = Item.where(area: @inventorysheet.clipboard.area)
     @clipboard = @inventorysheet.clipboard
+    @items_ordered = @inventorysheet.orders.includes(:item)
   end
 
   # GET /inventorysheets/new
@@ -26,6 +27,7 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets/1/edit
   def edit
     @clipboards = Clipboard.all
+    @clipboard = @inventorysheet.clipboard
   end
 
   # POST /inventorysheets or /inventorysheets.json

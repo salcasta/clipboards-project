@@ -21,12 +21,12 @@
 
   <div>
     <%= form.label :on_hand, style: "display: block" %>
-    <%= form.number_field :on_hand %>
+    <%= form.text_field :on_hand %>
   </div>
 
   <div>
     <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+    <%= form.text_field :quantity %>
   </div>
   
   <% if @item %>
