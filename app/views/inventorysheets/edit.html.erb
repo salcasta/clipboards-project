@@ -6,5 +6,5 @@
 
 <div>
   <%= link_to "Show this inventory sheet", @inventorysheet %> |
-  <%= link_to "Back to inventory sheets", inventorysheets_path %>
+  <%= link_to "Back to #{@clipboard.area} inventory sheets", inventorysheets_path(clipboard_id: @clipboard.id) %>
 </div>

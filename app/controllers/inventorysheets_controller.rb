@@ -27,6 +27,7 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets/1/edit
   def edit
     @clipboards = Clipboard.all
+    @clipboard = @inventorysheet.clipboard
   end
 
   # POST /inventorysheets or /inventorysheets.json
