@@ -1,3 +1,8 @@
+databases: 
+  - name: clipcloud_db
+    databaseName: clipcloud_db
+    user: clipcloud_db
+
 services:
   - type: web
     name: ClipCloud # the name of this service, eg hello-world
