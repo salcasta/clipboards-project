@@ -25,7 +25,7 @@ class ClipboardsController < ApplicationController
 
     respond_to do |format|
       if @clipboard.save
-        format.html { redirect_to clipboard_url(@clipboard), notice: "Clipboard was successfully created." }
+        format.html { redirect_to clipboards_url, notice: "Clipboard was successfully created." }
         format.json { render :show, status: :created, location: @clipboard }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ClipboardsController < ApplicationController
   def update
     respond_to do |format|
       if @clipboard.update(clipboard_params)
-        format.html { redirect_to clipboard_url(@clipboard), notice: "Clipboard was successfully updated." }
+        format.html { redirect_to clipboards_url, notice: "Clipboard was successfully updated." }
         format.json { render :show, status: :ok, location: @clipboard }
       else
         format.html { render :edit, status: :unprocessable_entity }
