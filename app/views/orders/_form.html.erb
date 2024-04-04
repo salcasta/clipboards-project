@@ -1,0 +1,52 @@
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.hidden_field :item_id, style: "display: block" %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :inventory_sheets_id, style: "display: block" %>
+  </div>
+
+  <div>
+    <%= form.label :on_hand, style: "display: block" %>
+    <%= form.text_field :on_hand %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.text_field :quantity %>
+  </div>
+  
+  <% if @item %>
+  <div>
+    <strong>Par Level:</strong>
+    <%= @item.par_level || "None provided" %>
+  </div>
+
+  <div>
+    <strong>Unit:</strong>
+    <%= @item.unit || "None provided" %>
+  </div>
+
+   <div>
+    <strong>Pack Size:</strong>
+    <%= @item.pack_size || "None provided" %>
+  </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
