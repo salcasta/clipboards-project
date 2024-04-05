@@ -1,1 +1,37 @@
-<h1>Landing page</h1>
+<div class="d-flex justify-content-center">
+  <h1 class="rubik-bubbles display-1 text-light">ClipCloud</h1>
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+  <h2 class="display-6 text-center">Bring your inventory control into the cloud</h2>
+</div>
+<div class="d-flex justify-content-center">
+   <h2 class=" display-6 text-center"><%= link_to 'Sign up today', new_user_registration_path, class: 'text-decoration-none text-dark' %></h2>
+</div>
+
+<div class="row align-items-center my-5">
+  <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+    <%= image_tag "hand_phone.png", class: "img-fluid rounded small-screen-img" %>
+  </div>
+  <div class="col-12 col-md-4 mt-3">
+    <p class="fs-3 px-3 text-wrap text-center">Say goodbye to all your old clipboards! Access your inventory from anywhere!</p>
+  </div>
+</div>
+
+<div class="row align-items-center my-5 flex-md-row-reverse">
+  <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
+    <%= image_tag "cloud_clipboard.png", class: "img-fluid rounded small-screen-img" %>
+  </div>
+  <div class="col-12 col-md-4 mt-3">
+    <p class="fs-3 px-3 text-wrap text-center">No more printing out inventory sheets and storing them</p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mb-3">
+  <h3>Bring your business into the modern age</h3>
+</div>
+<div class="d-flex justify-content-evenly align-items-center">
+  <%= image_tag "old_clipboard.png", class: "w-25 rounded" %>
+  <i class="fa-solid fa-arrow-right fa-5x"></i>
+  <%= image_tag "ipad_clipboard.png", class: "w-25 rounded" %>
+</div>
