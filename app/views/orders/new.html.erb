@@ -1,9 +1,5 @@
-<h1>New order</h1>
+<div class="d-flex justify-content-center">
+  <h1>New Order</h1>
+</div>
 
 <%= render "form", order: @order %>
-
-<br>
-
-<div>
-  <%= link_to "Back to the inventory sheet", inventorysheet_path(@order.inventory_sheets_id) %>
-</div>

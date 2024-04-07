@@ -64,10 +64,11 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1 or /orders/1.json
   def destroy
+    inventory_sheet_id = @order.inventory_sheets_id
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to inventorysheets_url, notice: "Order was successfully destroyed." }
+      format.html { redirect_to inventorysheet_path(inventory_sheet_id), notice: "Order was successfully destroyed." }
       format.json { head :no_content }
     end
   end
