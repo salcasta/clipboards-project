@@ -1,12 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Orders</h1>
+<div class="d-flex justify-content-center">
+  <h1>Orders</h1>
+</div>
 
-<div id="orders">
+<div id="orders" class="d-flex justify-content-center flex-wrap">
   <% @orders.each do |order| %>
     <%= render order %>
-    <p>
-      <%= link_to "Show this order", order %>
-    </p>
   <% end %>
 </div>
