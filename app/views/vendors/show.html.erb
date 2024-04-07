@@ -1,10 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @vendor %>
+<div class="d-flex justify-content-center">
+  <h1 class="text-danger text-center">ARE YOU SURE YOU WANT TO DELETE THIS VENDOR?</h1>
+</div>
 
-<div>
-  <%= link_to "Edit this vendor", edit_vendor_path(@vendor) %> |
-  <%= link_to "Back to vendors", vendors_path %>
+<div class="d-flex flex-column align-items-center py-5">
+    <h3>Back to safety</h3>
+    <%= link_to "Back to your vendors", vendors_path, class: "btn btn-success" %> 
+</div>
 
-  <%= button_to "Destroy this vendor", @vendor, method: :delete %>
+<div class="d-flex flex-column align-items-center py-5">
+  <h3>There is no undoing this action</h3>
+  <%= button_to "Destroy this vendor", @vendor, method: :delete, class: "btn btn-danger" %>
 </div>
