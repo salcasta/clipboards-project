@@ -11,76 +11,136 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category %>
-  </div>
+  <div class="d-flex justify-content-center mt-2">
+    <div class="card border-0" style="width: 20rem;">
+      <div class="card-body d-flex flex-column">
 
-  <div>
-    <%= form.label :product_type, style: "display: block" %>
-    <%= form.text_field :product_type %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :category, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :category, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :label, style: "display: block" %>
-    <%= form.text_field :label %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :product_type, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :product_type, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :unit, style: "display: block" %>
-    <%= form.text_field :unit %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :label, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :label, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :unit, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :unit, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :pack_size, style: "display: block" %>
-    <%= form.number_field :pack_size %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :price, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :price, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :item_size, style: "display: block" %>
-    <%= form.text_field :item_size %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :pack_size, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :pack_size, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :pack_cost, style: "display: block" %>
-    <%= form.number_field :pack_cost %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :item_size, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :item_size, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :pack_cost, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :pack_cost, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :area, style: "display: block" %>
-    <%= form.select :area, Clipboard.all.map { |clipboard| [clipboard.area] } %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :area, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.select :area, Clipboard.all.map { |clipboard| [clipboard.area] } %>
+          </div>
+        </div>
+        
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :vendor_id, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.select :vendor_id, [['', '']] + Vendor.all.map { |vendor| [vendor.company_name, vendor.id] } %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :vendor_id, style: "display: block" %>
-    <%= form.select :vendor_id, [['', '']] + Vendor.all.map { |vendor| [vendor.company_name, vendor.id] } %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :rank, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :rank, size: 10 %>
+          </div>
+        </div> 
 
-  <div>
-    <%= form.label :rank, style: "display: block" %>
-    <%= form.number_field :rank %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :par_level, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_field :par_level, size: 10 %>
+          </div>
+        </div>             
 
-  <div>
-    <%= form.label :par_level, style: "display: block" %>
-    <%= form.number_field :par_level %>
-  </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex align-items-start">
+            <%= form.label :comment, class: "fw-bold me-2" %>
+          </div>
+          <div class="d-flex align-items-end">
+            <%= form.text_area :comment, size: 10 %>
+          </div>
+        </div>
 
-  <div>
-    <%= form.label :comment, style: "display: block" %>
-    <%= form.text_field :comment %>
-  </div>
+        <div>
+          <%= form.hidden_field :user_id, value: current_user.id %>
+        </div>
 
-  <div>
-    <%= form.submit %>
+        <div class="d-flex justify-content-center"> 
+          <%= link_to "Back to items", items_path, class: "btn btn-primary btn-sm mt-3 mx-1" %>
+          <%= form.submit class: "btn btn-success btn-sm mt-3" %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
