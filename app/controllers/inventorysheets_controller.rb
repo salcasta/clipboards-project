@@ -36,7 +36,7 @@ class InventorysheetsController < ApplicationController
 
     respond_to do |format|
       if @inventorysheet.save
-        format.html { redirect_to inventorysheet_url(@inventorysheet), notice: "Inventorysheet was successfully created." }
+        format.html { redirect_to inventorysheet_url(@inventorysheet), notice: "Inventory sheet was successfully created." }
         format.json { render :show, status: :created, location: @inventorysheet }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,7 +49,7 @@ class InventorysheetsController < ApplicationController
   def update
     respond_to do |format|
       if @inventorysheet.update(inventorysheet_params)
-        format.html { redirect_to inventorysheet_url(@inventorysheet), notice: "Inventorysheet was successfully updated." }
+        format.html { redirect_to inventorysheet_url(@inventorysheet), notice: "Inventory sheet was successfully updated." }
         format.json { render :show, status: :ok, location: @inventorysheet }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -63,7 +63,7 @@ class InventorysheetsController < ApplicationController
     @inventorysheet.destroy
 
     respond_to do |format|
-      format.html { redirect_to inventorysheets_url, notice: "Inventorysheet was successfully destroyed." }
+      format.html { redirect_to inventorysheets_url, notice: "Inventory sheet was successfully destroyed." }
       format.json { head :no_content }
     end
   end

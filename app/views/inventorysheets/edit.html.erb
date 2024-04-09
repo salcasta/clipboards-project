@@ -1,10 +1,5 @@
-<h1>Editing inventory sheet</h1>
+<div class="d-flex justify-content-center">
+  <h1>Editing Inventory Sheet</h1>
+</div>
 
 <%= render "form", inventorysheet: @inventorysheet %>
-
-<br>
-
-<div>
-  <%= link_to "Show this inventory sheet", @inventorysheet %> |
-  <%= link_to "Back to #{@clipboard.area} inventory sheets", inventorysheets_path(clipboard_id: @clipboard.id) %>
-</div>
