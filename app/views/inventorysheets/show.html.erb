@@ -1,31 +1,30 @@
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  th, td {
-    border: 1px solid black;
-  }
-</style>
+<div class="d-flex justify-content-center">
+  <%= link_to "Back to #{@clipboard.area} inventory sheets", inventorysheets_path(clipboard_id: @clipboard.id), class: "btn btn-primary" %>
+</div>
 
-<%= render @inventorysheet %>
+<div class="d-flex justify-content-center">
+  <%= render @inventorysheet %>
+</div>
 
-<h2>Items</h2>
+<div class="d-flex justify-content-center mt-5 mb-3">
+  <h2 class="display-6">Items</h2>
+</div>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Label</th>
-      <th>Unit</th>
-      <th>Pack Size</th>
-      <th>Rank</th>
-      <th>Orders</th>
+      <th scope="col">ID</th>
+      <th scope="col">Label</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Pack Size</th>
+      <th scope="col">Rank</th>
+      <th scope="col">Order</th>
     </tr>
   </thead>
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= link_to item.id, edit_item_path(item) %></td>
+        <th scope="row"><%= link_to item.id, edit_item_path(item) %></th>
         <td><%= item.label %></td>
         <td><%= item.unit %></td>
         <td><%= item.pack_size %></td>
@@ -37,38 +36,31 @@
 </table>
 
 
+<div class="d-flex justify-content-center mt-5 mb-3">
+  <h2 class="display-6">Your ordered items</h2>
+</div>
 
-<h2>Your ordered items</h2>
-
-<table>
+<table class="table table-striped-columns">
   <thead>
     <tr>
-      <th>Label</th>
-      <th>Unit</th>
-      <th>Pack Size</th>
-      <th>On hand</th>
-      <th>Order</th>
+      <th scope="col">Label</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Pack Size</th>
+      <th scope="col">Rank</th>
+      <th scope="col">Order</th>
     </tr>
   </thead>
   <tbody>
     <% @items_ordered.each do |order| %>
       <tr>
-      <% if order.quantity > 0 %>
-        <td><%= order.item.label %></td>
-        <td><%= order.item.unit %></td>
-        <td><%= order.item.pack_size %></td>
-        <td><%= order.on_hand %></td>
-        <td><%= order.quantity %></td>
-      <% end %>
+          <% if order.quantity > 0 %>
+            <td><%= order.item.label %></td>
+            <td><%= order.item.unit %></td>
+            <td><%= order.item.pack_size %></td>
+            <td><%= order.on_hand %></td>
+            <td><%= order.quantity %></td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-
-<div>
-  <%= link_to "Edit this inventory sheet", edit_inventorysheet_path(@inventorysheet) %> |
-  <%= link_to "Back to #{@clipboard.area} inventory sheets", inventorysheets_path(clipboard_id: @clipboard.id) %>
-
-  <%= button_to "Destroy this inventory sheet", @inventorysheet, method: :delete %>
-</div>

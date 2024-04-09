@@ -7,7 +7,9 @@
       <p class="card-text"><%= "Holiday: #{inventorysheet.is_holiday}" %></p>
       <div class="d-flex">
         <%= link_to "Edit", edit_inventorysheet_path(inventorysheet), class: "btn btn-warning btn-sm p-2 mx-2" %>
-        <%= link_to "View", inventorysheet, class: "btn btn-success btn-sm p-2 mx-2" %>
+        <% unless current_page?(inventorysheet) %>
+          <%= link_to "View", inventorysheet, class: "btn btn-success btn-sm p-2 mx-2" %>
+        <% end %>
         <%= button_to "Delete", inventorysheet, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-sm p-2 mx-2" %>
       </div>
     </div>
