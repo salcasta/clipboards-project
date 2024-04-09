@@ -1,22 +1,17 @@
-<div id="<%= dom_id inventorysheet %>">
-  <p>
-    <strong>Date:</strong>
-    <%= inventorysheet.date.strftime("%B %d, %Y") %>
-  </p>
-
-  <p>
-    <strong>Is holiday:</strong>
-    <%= inventorysheet.is_holiday %>
-  </p>
-
-  <p>
-    <strong>Is complete:</strong>
-    <%= inventorysheet.is_complete %>
-  </p>
-
-  <p>
-    <strong>Clipboard:</strong>
-    <%= inventorysheet.clipboard.area %>
-  </p>
-
+<div id="<%= dom_id inventorysheet %>" class="me-3">
+  <div class="card mt-3 border-0" style="width: 22rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+      <h5 class="card-title fw-bold"><%= inventorysheet.date.strftime("%B %d, %Y") %></h5>
+      <p class="card-text fw-bold"><%= inventorysheet.clipboard.area.upcase %></p>
+      <p class="card-text"><%= "Complete: #{inventorysheet.is_complete}" %></p>
+      <p class="card-text"><%= "Holiday: #{inventorysheet.is_holiday}" %></p>
+      <div class="d-flex">
+        <%= link_to "Edit", edit_inventorysheet_path(inventorysheet), class: "btn btn-warning btn-sm p-2 mx-2" %>
+        <% unless current_page?(inventorysheet) %>
+          <%= link_to "View", inventorysheet, class: "btn btn-success btn-sm p-2 mx-2" %>
+        <% end %>
+        <%= button_to "Delete", inventorysheet, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-sm p-2 mx-2" %>
+      </div>
+    </div>
+  </div>
 </div>
