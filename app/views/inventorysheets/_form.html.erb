@@ -32,7 +32,7 @@
         <% end %>
 
         <div class="d-flex align-items-center mt-3">
-          <%= form.label :clipboard_id, class: "fw-bold" %>
+          <%= form.label :clipboard_id, class: "fw-bold me-2" %>
           <%= form.select :clipboard_id, @clipboards.map { |clipboard| [clipboard.area, clipboard.id]} %>
         </div>
 
