@@ -6,7 +6,7 @@ class InventorysheetsController < ApplicationController
     if params[:clipboard_id]
       @inventorysheets = Inventorysheet.where(clipboard_id: params[:clipboard_id]).order(date: :desc)
     else
-      @inventorysheets = Inventorysheet.all.order("created_at DESC")
+      @inventorysheets = Inventorysheet.all.order(date: :desc)
     end    
   end
 
