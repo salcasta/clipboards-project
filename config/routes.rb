@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :inventorysheets
   resources :items
   devise_for :users
+
+  get 'holiday', to: 'holiday#index', as: 'holiday_inventorysheets'
 end

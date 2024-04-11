@@ -4,7 +4,7 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets or /inventorysheets.json
   def index
     if params[:clipboard_id]
-      @inventorysheets = Inventorysheet.where(clipboard_id: params[:clipboard_id]).order("created_at DESC")
+      @inventorysheets = Inventorysheet.where(clipboard_id: params[:clipboard_id]).order(date: :desc)
     else
       @inventorysheets = Inventorysheet.all.order("created_at DESC")
     end    
