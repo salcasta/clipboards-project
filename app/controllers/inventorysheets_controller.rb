@@ -13,7 +13,7 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets/1 or /inventorysheets/1.json
   def show
     @inventorysheet = Inventorysheet.find(params[:id])
-    @items = Item.where(area: @inventorysheet.clipboard.area)
+    @items = Item.where(area: @inventorysheet.clipboard.area).order(rank: :asc)
     @clipboard = @inventorysheet.clipboard
     @items_ordered = @inventorysheet.orders.includes(:item)
   end
