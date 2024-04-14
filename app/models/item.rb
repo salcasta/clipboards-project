@@ -23,7 +23,7 @@
 #  vendor_id           :integer
 #
 class Item < ApplicationRecord
-  before_save :adjust_ranks
+  before_save :adjust_ranks, if: :rank_changed?
 
   belongs_to :user, class_name: "User", foreign_key: "user_id"
   has_many  :orders, class_name: "Order", foreign_key: "item_id", dependent: :nullify
