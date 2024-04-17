@@ -3,9 +3,9 @@ task({ :sample_data => :environment }) do
   
   #Order.delete_all
   Vendor.delete_all
-  #Item.delete_all
-  #Inventorysheet.delete_all
-  #Clipboard.delete_all
+  Item.delete_all
+  Inventorysheet.delete_all
+  Clipboard.delete_all
 
   vendors = Array.new(5) do
     {
@@ -56,19 +56,36 @@ task({ :sample_data => :environment }) do
 
   Inventorysheet.where.not(date: "2024,14,04").update_all(is_complete: true)
 
+  tequila_brands = ["Don Julio Blanco", "Don Julio Reposado", "Don Julio 1942", "Patron Silver", "Patron Reposado", "Espolon Blanco", "Espolon Reposado", "Casamigos Blanco", "Casamigos Reposado", "Casamigos Anejo", "Casamigos Mezcal", "Del Maguey Vida"]
+  units = ["btl", "case"]
+
+  tequila_brands.each_with_index do |tequila, index|
+    unit = units.sample
+    pack_size = unit == 'btl' ? 1 : 6
+    price = rand(20..100)
+    pack_cost = pack_size * price 
+
+    Item.create(
+      area: "Spirit",
+      category: "Tequila",
+      label: tequila,
+      unit: units,
+      price: price,
+      pack_size: pack_size,
+      item_size: "750ml",
+      pack_cost: pack_cost,
+      clipboard_id: 1,
+      vendor_id: rand(1..5),
+      rank: index + 1,
+      par_level: rand(10..20) 
+      comment: rand < 0.10 ? Fakker::Lorem.sentence : nil,
+      user_id: 2,
+    )
+  end
+
 
   p "There are now #{Vendor.count} vendors."
   p "There are now #{Clipboard.count} clipboards."
   p "There are now #{Inventorysheet.count} inventory sheets."
+  p "There are now #{Item.count} items."
 end
-
-
-#  id           :integer          not null, primary key
-#  date         :date
-#  is_complete  :boolean
-#  is_holiday   :boolean
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  clipboard_id :integer
-#  item_id      :integer
-#  user_id      :integer
