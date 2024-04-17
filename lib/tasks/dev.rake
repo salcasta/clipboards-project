@@ -34,6 +34,41 @@ task({ :sample_data => :environment }) do
     )
   end
 
+  dates = ["2024,14,04", "2024,07,04", "2024,31,03", "2024,24,03", "2024,24,03", "2024,17,03", "2024,10,03", "2024,03,03"]
+
+  dates.each do |date|
+    Inventorysheet.create(
+      date: date,
+      is_complete: false,
+      is_holiday: false,
+      clipboard_id: 1,
+      user_id: 2
+    )
+
+  dates.each do |date|
+    Inventorysheet.create(
+      date: date,
+      is_complete: false,
+      is_holiday: false,
+      clipboard_id: rand(2..5),
+      user_id: 2
+    )
+
+  Inventorysheet.where.not(date: "2024,14,04").update_all(is_complete: true)
+
+
   p "There are now #{Vendor.count} vendors."
   p "There are now #{Clipboard.count} clipboards."
+  p "There are now #{Inventorysheet.count} inventory sheets."
 end
+
+
+#  id           :integer          not null, primary key
+#  date         :date
+#  is_complete  :boolean
+#  is_holiday   :boolean
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  clipboard_id :integer
+#  item_id      :integer
+#  user_id      :integer
