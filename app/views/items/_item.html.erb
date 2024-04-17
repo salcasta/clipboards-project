@@ -13,7 +13,7 @@
       <p class="card-text"><%= "Vendor: #{item.vendor&.company_name || 'None Selected'}" %></p>
       <p class="card-text"><%= "Rank: #{item.rank}" %></p>
       <p class="card-text"><%= "Par Level: #{item.par_level}" %></p>
-      <p class="card-text"><%= "Comment: #{item.comment}" %></p>
+      <p class="card-text text-truncate" id="comment_truncate"><%= "Comment: #{item.comment}" %></p>
       <div class="d-flex">
         <%= link_to "Edit", edit_item_path(item), class: "btn btn-outline-secondary btn-sm p-2 mx-2" %>
         <% unless current_page?(item) %>

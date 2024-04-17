@@ -44,6 +44,7 @@ task({ :sample_data => :environment }) do
       clipboard_id: 1,
       user_id: 2
     )
+  end
 
   dates.each do |date|
     Inventorysheet.create(
@@ -53,6 +54,7 @@ task({ :sample_data => :environment }) do
       clipboard_id: rand(2..5),
       user_id: 2
     )
+  end
 
   Inventorysheet.where.not(date: "2024,14,04").update_all(is_complete: true)
 
@@ -66,20 +68,20 @@ task({ :sample_data => :environment }) do
     pack_cost = pack_size * price 
 
     Item.create(
-      area: "Spirit",
-      category: "Tequila",
+      category: "Spirit",
+      product_type: "Tequila",
       label: tequila,
       unit: units,
       price: price,
       pack_size: pack_size,
       item_size: "750ml",
       pack_cost: pack_cost,
-      clipboard_id: 1,
+      area: "bar",
       vendor_id: rand(1..5),
       rank: index + 1,
-      par_level: rand(10..20) 
-      comment: rand < 0.10 ? Fakker::Lorem.sentence : nil,
-      user_id: 2,
+      par_level: rand(10..20), 
+      comment: rand < 0.10 ? Faker::Lorem.sentence : nil,
+      user_id: 2
     )
   end
 
@@ -104,12 +106,3 @@ task({ :sample_data => :environment }) do
   p "There are now #{Item.count} items."
   p "There are now #{Order.count} orders."
 end
-
-
-#  id                  :integer          not null, primary key
-#  on_hand             :float
-#  quantity            :float
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
-#  inventory_sheets_id :integer
-#  item_id             :integer
