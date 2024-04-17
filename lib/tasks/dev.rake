@@ -25,5 +25,15 @@ task({ :sample_data => :environment }) do
     )
   end
 
+  areas = ["bar", "produce", "meats", "paper goods", "dry goods"]
+
+  areas.each do |area|
+    Clipboard.create(
+      area: area,
+      user_id: 2
+    )
+  end
+
   p "There are now #{Vendor.count} vendors."
+  p "There are now #{Clipboard.count} clipboards."
 end
