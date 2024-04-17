@@ -1,7 +1,7 @@
 desc "Fill the database tables with some sample data"
 task({ :sample_data => :environment }) do
   
-  #Order.delete_all
+  Order.delete_all
   Vendor.delete_all
   Item.delete_all
   Inventorysheet.delete_all
@@ -83,9 +83,33 @@ task({ :sample_data => :environment }) do
     )
   end
 
+  bar_inventorysheets = Inventorysheet.where(clipboard_id: 1)
+  items = Item.all
+
+  bar_inventorysheets.each do |inventorysheet|
+    items.each do |item|
+      Order.create(
+        on_hand: rand(0..20),
+        quantity: rand(0..10),
+        inventorysheet_id: inventorysheet.id,
+        item_id: item.id
+      )
+    end
+  end
+
 
   p "There are now #{Vendor.count} vendors."
   p "There are now #{Clipboard.count} clipboards."
   p "There are now #{Inventorysheet.count} inventory sheets."
   p "There are now #{Item.count} items."
+  p "There are now #{Order.count} orders."
 end
+
+
+#  id                  :integer          not null, primary key
+#  on_hand             :float
+#  quantity            :float
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  inventory_sheets_id :integer
+#  item_id             :integer
