@@ -33,7 +33,15 @@ h5 {
   color: rgb(242, 194, 79);
 }
 
+#vendor_title_truncate {
+  max-width: 100%;
+}
+
 #comment_truncate {
+  max-width: 100%;
+}
+
+#item_vendor_truncate {
   max-width: 100%;
 }
 
