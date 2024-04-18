@@ -46,6 +46,7 @@ task({ :sample_data => :environment }) do
   end
 
   dates = ["2024-04-14", "2024-04-07", "2024-03-31", "2024-03-24", "2024-03-17", "2024-03-10", "2024-03-03", "2024-02-25"]
+  holiday_dates = ["2023-12-31", "2023-12-24", "2023-11-19", "2023-10-29", "2023-08-27", "2023-07-02", "2023-05-28"]
 
   dates.map! { |date| Date.parse(date) }
 
@@ -68,6 +69,16 @@ task({ :sample_data => :environment }) do
       is_complete: false,
       is_holiday: false,
       clipboard_id: other_clipboard_ids.sample,
+      user_id: userID
+    )
+  end
+
+  holiday_dates.each do |date|
+    Inventorysheet.create(
+      date: date,
+      is_complete: false,
+      is_holiday: true,
+      clipboard_id: bar_clipboard.id,
       user_id: userID
     )
   end
