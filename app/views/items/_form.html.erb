@@ -80,15 +80,6 @@
 
         <div class="d-flex justify-content-between mt-2">
           <div class="d-flex align-items-start">
-            <%= form.label :pack_cost, class: "fw-bold me-2" %>
-          </div>
-          <div class="d-flex align-items-end">
-            <%= form.text_field :pack_cost, size: 10 %>
-          </div>
-        </div>
-
-        <div class="d-flex justify-content-between mt-2">
-          <div class="d-flex align-items-start">
             <%= form.label :area, class: "fw-bold me-2" %>
           </div>
           <div class="d-flex align-items-end">
@@ -101,7 +92,7 @@
             <%= form.label :vendor_id, class: "fw-bold me-2" %>
           </div>
           <div class="d-flex align-items-end">
-            <%= form.select :vendor_id, [['', '']] + Vendor.all.map { |vendor| [vendor.company_name, vendor.id] } %>
+            <%= form.select :vendor_id, [['', '']] + Vendor.all.map { |vendor| [truncate(vendor.company_name, length:20), vendor.id] } %>
           </div>
         </div>
 

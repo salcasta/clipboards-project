@@ -1,7 +1,7 @@
 <div id="<%= dom_id vendor %>" class="me-3">
   <div class="card mt-3 border-0" style="width: 22rem; height:14rem;">
     <div class="card-body d-flex flex-column align-items-center">
-      <h5 class="card-title text-truncate fw-bold"><%= vendor.company_name.upcase %></h5>
+      <h5 class="card-title text-truncate fw-bold" id="vendor_title_truncate"><%= vendor.company_name.upcase %></h5>
       <p class="card-text"><%= "#{vendor.rep_name}" %></p>
       <p class="card-text"><%= "#{vendor.rep_email}" %></p>
       <p class="card-text"><%= "#{vendor.rep_phone_number}" %></p>

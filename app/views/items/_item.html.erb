@@ -7,10 +7,10 @@
       <p class="card-text"><%= "Unit: #{item.unit}" %></p>
       <p class="card-text"><%= "Price: $#{item.price}" %></p>
       <p class="card-text"><%= "Pack Size: #{item.pack_size}" %></p>
-      <p class="card-text"><%= "Item Size: #{item.item_size}" %></p>
       <p class="card-text"><%= "Pack Cost: $#{item.pack_cost}" %></p>
+      <p class="card-text"><%= "Item Size: #{item.item_size}" %></p>
       <p class="card-text"><%= "Area: #{item.area}" %></p>
-      <p class="card-text"><%= "Vendor: #{item.vendor&.company_name || 'None Selected'}" %></p>
+      <p class="card-text text-truncate" id="item_vendor_truncate"><%= "Vendor: #{item.vendor&.company_name || 'None Selected'}" %></p>
       <p class="card-text"><%= "Rank: #{item.rank}" %></p>
       <p class="card-text"><%= "Par Level: #{item.par_level}" %></p>
       <p class="card-text text-truncate" id="comment_truncate"><%= "Comment: #{item.comment}" %></p>
