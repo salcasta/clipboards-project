@@ -25,6 +25,13 @@ body {
   background-color: #B3D6FF;
 }
 
+h5 {
+  max-width: 100%;
+}
+
+#comment_truncate {
+  max-width: 100%;
+}
 
 @media (max-width: 576px) {
   .small-screen-img {
