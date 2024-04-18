@@ -6,8 +6,17 @@ task({ :sample_data => :environment }) do
   Item.delete_all
   Clipboard.delete_all
   Inventorysheet.delete_all
+  User.delete_all
 
+  User.create(
+    email: "test@test.com",
+    password: "password",
+    general_manager_name: "Test Manager",
+    organization_name: "Lalo's"
+  )
 
+  userID = User.first.id
+ 
 
   vendors = Array.new(5) do
     {
@@ -32,7 +41,7 @@ task({ :sample_data => :environment }) do
   areas.each do |area|
     Clipboard.create(
       area: area,
-      user_id: 2
+      user_id: userID
     )
   end
 
@@ -49,7 +58,7 @@ task({ :sample_data => :environment }) do
       is_complete: false,
       is_holiday: false,
       clipboard_id: bar_clipboard.id,
-      user_id: 2,
+      user_id: userID
     )
   end
 
@@ -59,7 +68,7 @@ task({ :sample_data => :environment }) do
       is_complete: false,
       is_holiday: false,
       clipboard_id: other_clipboard_ids.sample,
-      user_id: 2,
+      user_id: userID
     )
   end
 
@@ -88,7 +97,7 @@ task({ :sample_data => :environment }) do
       rank: index + 1,
       par_level: rand(10..20), 
       comment: rand < 0.25 ? Faker::Lorem.sentence : nil,
-      user_id: 2
+      user_id: userID
     )
   end
 
@@ -114,4 +123,5 @@ task({ :sample_data => :environment }) do
   p "There are now #{Inventorysheet.count} inventory sheets."
   p "There are now #{Item.count} items."
   p "There are now #{Order.count} orders."
+  p "There are now #{User.count} users."
 end
