@@ -29,6 +29,10 @@ h5 {
   max-width: 100%;
 }
 
+.yellow-star {
+  color: rgb(242, 194, 79);
+}
+
 #comment_truncate {
   max-width: 100%;
 }
