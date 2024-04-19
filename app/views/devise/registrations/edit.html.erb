@@ -10,42 +10,46 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <div class="d-flex align-item-start">
-              <%= f.input :email, 
-                          required: true, 
-                          autofocus: true,
-                          label_html: { style: 'margin-bottom: 1rem;' } %>
-            </div>
+            <%= f.input :email, 
+                         required: true, 
+                         autofocus: true,
+                         label_html: { class: "d-flex justify-content-center mb-2" },
+                         input_html: { class: "mb-2"} %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
 
-            <div class="d-flex align-item-start">
-              <%= f.input :password,
-                          required: false,
-                          label_html: { style: 'margin-bottom: 1rem;' },
-                          input_html: { autocomplete: "new-password" } %>
-            </div>
+            <%= f.input :password,
+                        required: false,
+                        label_html: { class: "d-flex justify-content-center mb-2" },
+                        input_html: { autocomplete: "new-password", class: "mb-2" } %>
             <%= f.input :password_confirmation,
                         required: false,
-                        input_html: { autocomplete: "new-password" } %>
+                        label_html: { class: "d-flex justify-content-center mb-2" },
+                        input_html: { autocomplete: "new-password", class: "mb-2"} %>
             <%= f.input :organization_name,
-                        required: true %>
-            <%= f.input :general_manager_name,
-                        required: true %>
-            <%= f.input :logo,
-                        required: false%>
-            <%= f.input :current_password,
-                        hint: "We need your current password to confirm your changes",
                         required: true,
+                        label_html: { class: "d-flex justify-content-center mb-2" },
+                        input_html: { class: "mb-2"} %>
+            <%= f.input :general_manager_name,
+                        required: true,
+                        label_html: { class: "d-flex justify-content-center mb-2" },
+                        input_html: { class: "mb-2"} %>
+            <%= f.input :current_password,
+                        required: true,
+                        label_html: { class: "d-flex justify-content-center mb-2" },
                         input_html: { autocomplete: "current-password" } %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Update" %>
+            <%= f.button :submit, "Update", class: "btn btn-success mt-2 mb-5" %>
           </div>
         <% end %>
+
+        <div>
+          <p>We need your current password to confirm your changes</p>
+        </div>
 
         <h3 class="display-6">Danger Zone</h3>
 
