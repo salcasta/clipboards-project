@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_02_212544) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_21_004648) do
   create_table "clipboards", force: :cascade do |t|
     t.string "area"
     t.integer "user_id"
@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_02_212544) do
     t.integer "clipboard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "item_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -57,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_02_212544) do
     t.float "on_hand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,7 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_02_212544) do
     t.datetime "remember_created_at"
     t.string "organization_name"
     t.string "general_manager_name"
-    t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -81,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_02_212544) do
     t.string "rep_phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
 end

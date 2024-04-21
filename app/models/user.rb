@@ -6,7 +6,6 @@
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  general_manager_name   :string
-#  logo                   :string
 #  organization_name      :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -28,5 +27,7 @@ class User < ApplicationRecord
   has_many  :items, class_name: "Item", foreign_key: "user_id", dependent: :destroy
   has_many  :inventorysheets, class_name: "Inventorysheet", foreign_key: "user_id", dependent: :destroy
   has_many  :clipboards, class_name: "Clipboard", foreign_key: "user_id", dependent: :destroy
+  has_many  :vendors, class_name: "Vendor", foreign_key: "user_id", dependent: :destroy
+  has_many  :orders, class_name: "Order", foreign_key: "user_id", dependent: :destroy
 
 end

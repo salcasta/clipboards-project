@@ -3,7 +3,7 @@ class ClipboardsController < ApplicationController
 
   # GET /clipboards or /clipboards.json
   def index
-    @clipboards = Clipboard.all
+    @clipboards = current_user.clipboards
   end
 
   # GET /clipboards/1 or /clipboards/1.json

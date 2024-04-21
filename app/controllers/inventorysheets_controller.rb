@@ -4,16 +4,16 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets or /inventorysheets.json
   def index
     if params[:clipboard_id]
-      @inventorysheets = Inventorysheet.where(clipboard_id: params[:clipboard_id]).order(date: :desc)
+      @inventorysheets = current_user.inventorysheets.where(clipboard_id: params[:clipboard_id]).order(date: :desc)
     else
-      @inventorysheets = Inventorysheet.all.order(date: :desc)
+      @inventorysheets = current_user.inventorysheets.all.order(date: :desc)
     end    
   end
 
   # GET /inventorysheets/1 or /inventorysheets/1.json
   def show
     @inventorysheet = Inventorysheet.find(params[:id])
-    @items = Item.where(area: @inventorysheet.clipboard.area).order(rank: :asc)
+    @items = current_user.items.where(area: @inventorysheet.clipboard.area).order(rank: :asc)
     @clipboard = @inventorysheet.clipboard
     @items_ordered = @inventorysheet.orders.includes(:item)
   end
@@ -21,7 +21,7 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets/new
   def new
     @inventorysheet = Inventorysheet.new
-    @clipboards = Clipboard.all
+    @clipboards = current_user.clipboards
   end
 
   # GET /inventorysheets/1/edit
