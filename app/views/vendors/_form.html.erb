@@ -34,6 +34,10 @@
           <%= form.text_field :rep_phone_number %>
         </div>
 
+        <div>
+          <%= form.hidden_field :user_id, value: current_user.id %>
+        </div>
+
         <div class="d-flex"> 
           <%= link_to "Back to vendors", vendors_path, class: "btn btn-outline-primary btn-sm fw-bold mt-3 mx-1" %>
           <%= form.submit class: "btn btn-outline-success btn-sm fw-bold mt-3" %>

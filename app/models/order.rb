@@ -9,6 +9,7 @@
 #  updated_at          :datetime         not null
 #  inventory_sheets_id :integer
 #  item_id             :integer
+#  user_id             :integer
 #
 class Order < ApplicationRecord
   validates :quantity, numericality: true
@@ -16,4 +17,5 @@ class Order < ApplicationRecord
 
   belongs_to :item, required: true, class_name: "Item", foreign_key: "item_id"
   belongs_to :inventory_sheets, required: true, class_name: "Inventorysheet", foreign_key: "inventory_sheets_id"
+  belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
 end

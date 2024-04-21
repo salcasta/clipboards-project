@@ -83,7 +83,7 @@
             <%= form.label :area, class: "fw-bold me-2" %>
           </div>
           <div class="d-flex align-items-end">
-            <%= form.select :area, Clipboard.all.map { |clipboard| [clipboard.area] } %>
+            <%= form.select :area, current_user.clipboards.map { |clipboard| [clipboard.area] } %>
           </div>
         </div>
         
@@ -92,7 +92,7 @@
             <%= form.label :vendor_id, class: "fw-bold me-2" %>
           </div>
           <div class="d-flex align-items-end">
-            <%= form.select :vendor_id, [['', '']] + Vendor.all.map { |vendor| [truncate(vendor.company_name, length:20), vendor.id] } %>
+            <%= form.select :vendor_id, [['', '']] + current_user.vendors.map { |vendor| [truncate(vendor.company_name, length:20), vendor.id] } %>
           </div>
         </div>
 

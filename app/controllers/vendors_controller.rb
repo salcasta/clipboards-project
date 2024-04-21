@@ -3,7 +3,7 @@ class VendorsController < ApplicationController
 
   # GET /vendors or /vendors.json
   def index
-    @vendors = Vendor.all
+    @vendors = current_user.vendors
   end
 
   # GET /vendors/1 or /vendors/1.json
@@ -65,6 +65,6 @@ class VendorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vendor_params
-      params.require(:vendor).permit(:company_name, :rep_name, :rep_email, :rep_phone_number)
+      params.require(:vendor).permit(:company_name, :rep_name, :rep_email, :rep_phone_number, :user_id)
     end
 end

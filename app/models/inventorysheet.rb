@@ -9,7 +9,6 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  clipboard_id :integer
-#  item_id      :integer
 #  user_id      :integer
 #
 class Inventorysheet < ApplicationRecord

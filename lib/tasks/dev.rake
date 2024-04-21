@@ -32,7 +32,8 @@ task({ :sample_data => :environment }) do
       company_name: vendor[:company_name],
       rep_name: vendor[:rep_name],
       rep_email: vendor[:rep_email],
-      rep_phone_number: vendor[:rep_phone_number]
+      rep_phone_number: vendor[:rep_phone_number],
+      user_id: userID
     )
   end
 
@@ -123,7 +124,8 @@ task({ :sample_data => :environment }) do
         on_hand: rand(0..20),
         quantity: rand(0..10),
         inventory_sheets_id: inventorysheet.id,
-        item_id: item.id
+        item_id: item.id,
+        user_id: userID
       )
     end
   end
