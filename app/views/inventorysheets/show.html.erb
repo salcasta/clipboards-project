@@ -10,60 +10,14 @@
   <h2 class="display-6">Items</h2>
 </div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Label</th>
-      <th scope="col">Unit</th>
-      <th scope="col">Pack Size</th>
-      <th scope="col">Rank</th>
-      <th scope="col">Order</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <th scope="row"><%= link_to item.id, edit_item_path(item) %></th>
-        <td><%= item.label %></td>
-        <td><%= item.unit %></td>
-        <td><%= item.pack_size %></td>
-        <td><%= item.rank %></td>
-        <td><%= link_to 'Make/Edit an order', new_order_path(item_id: item.id, inventorysheet_id: @inventorysheet.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: "items_table" %>
 
- <%= paginate @items, param_name: "items_page" %>
+<%= paginate @items, param_name: "items_page" %>
 
 <div class="d-flex justify-content-center mt-5 mb-3">
   <h2 class="display-6">Your ordered items</h2>
 </div>
 
-<table class="table table-striped-columns">
-  <thead>
-    <tr>
-      <th scope="col">Label</th>
-      <th scope="col">Unit</th>
-      <th scope="col">Pack Size</th>
-      <th scope="col">On Hand</th>
-      <th scope="col">Quantity</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items_ordered.each do |order| %>
-      <tr>
-          <% if order.quantity > 0 %>
-            <td><%= order.item.label %></td>
-            <td><%= order.item.unit %></td>
-            <td><%= order.item.pack_size %></td>
-            <td><%= order.on_hand %></td>
-            <td><%= order.quantity %></td>
-          <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: "items_ordered_table" %>
 
 <%= paginate @items_ordered, param_name: "items_ordered_page" %>

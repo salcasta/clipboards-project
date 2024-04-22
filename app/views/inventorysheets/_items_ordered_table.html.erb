@@ -1,0 +1,24 @@
+<table class="table table-striped-columns">
+  <thead>
+    <tr>
+      <th scope="col">Label</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Pack Size</th>
+      <th scope="col">On Hand</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items_ordered.each do |order| %>
+      <tr>
+          <% if order.quantity > 0 %>
+            <td><%= order.item.label %></td>
+            <td><%= order.item.unit %></td>
+            <td><%= order.item.pack_size %></td>
+            <td><%= order.on_hand %></td>
+            <td><%= order.quantity %></td>
+          <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
