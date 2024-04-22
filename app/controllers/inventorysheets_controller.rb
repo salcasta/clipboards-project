@@ -13,9 +13,9 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets/1 or /inventorysheets/1.json
   def show
     @inventorysheet = Inventorysheet.find(params[:id])
-    @items = current_user.items.where(area: @inventorysheet.clipboard.area).order(rank: :asc)
+    @items = current_user.items.where(area: @inventorysheet.clipboard.area).order(rank: :asc).page(params[:items_page]).per(10)
     @clipboard = @inventorysheet.clipboard
-    @items_ordered = @inventorysheet.orders.includes(:item)
+    @items_ordered = @inventorysheet.orders.includes(:item).page(params[:items_ordered_page]).per(10)
   end
 
   # GET /inventorysheets/new
