@@ -5,7 +5,5 @@
 <%= render partial: "add_button" %>
 
 <div id="items" class="d-flex flex-row justify-content-center flex-wrap mt-4">
-  <% @items.each do |item| %>
-      <%= render item %>
-  <% end %>
+  <%= render partial: "item", collection: @items, as: :item %>
 </div>
