@@ -3,7 +3,5 @@
 </div>
 
 <div id="orders" class="d-flex justify-content-center flex-wrap">
-  <% @orders.each do |order| %>
-    <%= render order %>
-  <% end %>
+  <%= render partial: "order", collection: @orders, as: :order %>
 </div>

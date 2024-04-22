@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Label</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Pack Size</th>
+      <th scope="col">Rank</th>
+      <th scope="col">Order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <th scope="row"><%= link_to item.id, edit_item_path(item) %></th>
+        <td><%= item.label %></td>
+        <td><%= item.unit %></td>
+        <td><%= item.pack_size %></td>
+        <td><%= item.rank %></td>
+        <td><%= link_to 'Make/Edit an order', new_order_path(item_id: item.id, inventorysheet_id: @inventorysheet.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

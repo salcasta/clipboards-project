@@ -3,7 +3,5 @@
 </div>
 
 <div id="inventorysheets" class="d-flex flex-row justify-content-center flex-wrap mt-4">
-  <% @inventorysheets.each do |inventorysheet| %>
-      <%= render inventorysheet %>
-  <% end %>
+  <%= render partial: "inventorysheet", collection: @inventorysheets, as: :inventorysheet %>
 </div>
