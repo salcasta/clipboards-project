@@ -5,7 +5,5 @@
 <%= render  partial: "add_button" %>
 
 <div id="vendors" class="d-flex flex-row justify-content-center flex-wrap mt-4">
-  <% @vendors.each do |vendor| %>
-      <%= render vendor %>
-  <% end %>
+  <%= render partial: "vendor", collection: @vendors, as: :vendor %>
 </div>
