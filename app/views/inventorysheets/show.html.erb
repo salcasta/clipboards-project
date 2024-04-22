@@ -35,6 +35,7 @@
   </tbody>
 </table>
 
+ <%= paginate @items, param_name: "items_page" %>
 
 <div class="d-flex justify-content-center mt-5 mb-3">
   <h2 class="display-6">Your ordered items</h2>
@@ -64,3 +65,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @items_ordered, param_name: "items_ordered_page" %>
