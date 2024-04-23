@@ -1,13 +1,8 @@
 
 <a name="readme-top"></a>
 
-[![Commits][forks-shield]][https://github.com/salcasta/clipboards-project/graphs/commit-activity]
-[![Issues][stars-shield]][https://github.com/salcasta/clipboards-project/issues]
-[![LinkedIn][linkedin-shield]][www.linkedin.com/in/salcasta]
+<a href="https://github.com/salcasta/clipboards-project/issues/new">My linkedi</a>
 
-
-
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   
@@ -54,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![home_page.png]](https://clipcloud.onrender.com)
+<img src="/assets/images/home_page.png" alt="Home Page Screenshot" style="height: 600px; width:600px;" />
 
 A cloud-based inventory control app built for restaurants 
 
@@ -71,8 +66,8 @@ Benefits:
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Rails 7][Ruby on Rails Guide]][https://guides.rubyonrails.org/index.html]
-* [![Bootstrap][Bootstrap.com]][https://getbootstrap.com/]
+* [Ruby on Rails Guide][https://guides.rubyonrails.org/index.html]
+* [Bootstrap.com][https://getbootstrap.com/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,7 +121,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Creat an issue for the feature [https://github.com/salcasta/clipboards-project/issues]
+2. Creat an issue for the feature (https://github.com/salcasta/clipboards-project/issues)
 3. Create your Feature Branch (`git checkout -b your_iniitals-issue_number-AmazingFeature`)
 4. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 5. Push to the Branch (`git push origin feature/AmazingFeature`)
@@ -152,16 +147,3 @@ Project Link: [Github Repo](https://github.com/salcasta/clipboards-project)
 A very big thank you to everyone at DPI, especially Thierry and Carlos
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
