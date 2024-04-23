@@ -1,7 +1,6 @@
 
 <a name="readme-top"></a>
 
-<a href="https://github.com/salcasta/clipboards-project/issues/new">My linkedi</a>
 
 <br />
 <div align="center">
@@ -20,8 +19,6 @@
 </div>
 
 
-
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -49,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/assets/images/home_page.png" alt="Home Page Screenshot" style="height: 600px; width:600px;" />
+<img src="app/assets/images/home_page.png" alt="Home Page Screenshot" style="height: 600px; width:600px;" />
 
 A cloud-based inventory control app built for restaurants 
 
@@ -67,7 +64,7 @@ Benefits:
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Ruby on Rails Guide][https://guides.rubyonrails.org/index.html]
-* [Bootstrap.com][https://getbootstrap.com/]
+* [Bootstrap][https://getbootstrap.com/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
