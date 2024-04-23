@@ -1,11 +1,11 @@
 class OrderPolicy < ApplicationPolicy
 
   def show?
-    true
+    user.id == record.user_id
   end
 
   def create?
-    true
+    user.id == record.user_id
   end
 
   def new?
@@ -13,7 +13,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    user.id == record.user_id
   end
 
   def edit?
@@ -21,7 +21,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    user.id == record.user_id
   end
 
 end

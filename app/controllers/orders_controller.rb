@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
-  before_action { authorize @record || Order }
+  before_action { authorize @order|| Order }
 
   # GET /orders or /orders.json
   def index
