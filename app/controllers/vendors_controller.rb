@@ -1,5 +1,6 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: %i[ show edit update destroy ]
+  before_action { authorize @vendor|| Vendor }
 
   # GET /vendors or /vendors.json
   def index
