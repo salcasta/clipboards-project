@@ -9,7 +9,7 @@ class InventorysheetPolicy < ApplicationPolicy
   end
 
   def create?
-    user.id == record.user_id
+    true
   end
 
   def new?
