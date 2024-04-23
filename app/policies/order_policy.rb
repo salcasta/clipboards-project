@@ -1,5 +1,9 @@
 class OrderPolicy < ApplicationPolicy
 
+  def index?
+    true
+  end
+
   def show?
     user.id == record.user_id
   end
