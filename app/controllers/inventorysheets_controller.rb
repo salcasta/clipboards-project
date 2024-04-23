@@ -1,5 +1,6 @@
 class InventorysheetsController < ApplicationController
   before_action :set_inventorysheet, only: %i[ show edit update destroy ]
+  before_action { authorize @inventorysheet|| Inventorysheet }
 
   # GET /inventorysheets or /inventorysheets.json
   def index
