@@ -10,30 +10,28 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <div class="d-flex align-item-start">
-              <%= f.input :email,
-                          required: true,
-                          autofocus: true,
-                          label_html: { style: 'margin-bottom: 1rem; padding-left: 2rem;' },
-                          input_html: { autocomplete: "email" }%>
-            </div>
-            <div class="d-flex align-item-start">
-              <%= f.input :password,
-                          required: true,
-                          label_html: { style: 'margin-bottom: 1rem;' },
-                          input_html: { autocomplete: "new-password" } %>
-            </div>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        label_html: { class: "d-flex justify-content-center mb-2" },
+                        input_html: { autocomplete: "email", class: "mb-2" }%>
+            <%= f.input :password,
+                        required: true,
+                        label_html: { class: "d-flex justify-content-center mb-2" },
+                        input_html: { autocomplete: "new-password", class: "mb-2" } %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password", class: "mb-2" } %>
             <%= f.input :organization_name,
-                        required: true %>
+                        required: true,
+                        input_html: { autocomplete: "new-password", class: "mb-2" }  %>
             <%= f.input :general_manager_name,
-                        required: true %>
+                        required: true,
+                        input_html: { autocomplete: "new-password", class: "mb-2" }  %>
           </div>
 
           <div class="form-actions d-flex justify-content-center mt-3">
-            <%= f.button :submit, "Sign up", class: "btn btn-primary btn-sm mb-2" %>
+            <%= f.button :submit, "Sign up", class: "btn btn-outline-primary mb-2" %>
           </div>
         <% end %>
       </div>
