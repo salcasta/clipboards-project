@@ -1,4 +1,3 @@
-
 <a name="readme-top"></a>
 
 
@@ -35,6 +34,8 @@
         <li><a href="#production">Production</a></li>
       </ul>
     </li>
+    <li><a href="#faq">F.A.Q</a></li>
+    <li><a href="#erd">ClipCloud's ERD</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -42,11 +43,9 @@
 </details>
 
 
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="app/assets/images/home_page.png" alt="Home Page Screenshot" style="height: 600px; width:600px;" />
+<img src="app/assets/images/home_page.png" alt="Home Page Screenshot" style="height: 550px; width:750px;" />
 
 A cloud-based inventory control app built for restaurants 
 
@@ -69,8 +68,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
 Very easy to set up 
@@ -108,8 +105,36 @@ To make an order
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## FAQ
 
-<!-- CONTRIBUTING -->
+<details>
+  <summary>Why does it take forever to launch the app?</summary>
+  <ol>
+    <p>The app is being hosted by Render, so if the app is not being accessed it will "spin down" and take 30-60 seconds to launch</p>
+  </ol>
+
+  <summary>What will happen to my data if I delete a clipboard?</summary>
+  <ol>
+    <p>Be careful when deleting a clipboard! All inventory sheets/orders tied to that clipboard will be deleted as well. Items will remain but you will need to reassign every item again</p>
+  </ol>
+
+  <summary>What should I do if I encounter an error?</summary>
+  <ol>
+    <p>If an error comes up while using the app, please contact the lead developer via LinkedIn found in the "contact" section</p>
+  </ol>
+</details>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ERD
+
+<p>This is a screenshot of the ERD </p>
+
+<img src="app/assets/images/clipcloud_erd.png" alt="ERD Screenshot" style="height: 550px; width:750px;" />
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -127,7 +152,6 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- CONTACT -->
 ## Contact
 
 Salvador Castaneda - [Linkedin](www.linkedin.com/in/salcasta)
@@ -137,8 +161,6 @@ Project Link: [Github Repo](https://github.com/salcasta/clipboards-project)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
 A very big thank you to everyone at DPI, especially Thierry and Carlos
