@@ -5,6 +5,7 @@
 <div align="center">
   
   <h1>ClipCloud</h1>
+  <p>A Inventory Control App For Restaurants</p>
 
   <p align="center">
     <br />
@@ -36,6 +37,7 @@
     </li>
     <li><a href="#faq">F.A.Q</a></li>
     <li><a href="#erd">ClipCloud's ERD</a></li>
+    <li><a href="#github-projects">Github Projects</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -112,12 +114,16 @@ To make an order
   <ol>
     <p>The app is being hosted by Render, so if the app is not being accessed it will "spin down" and take 30-60 seconds to launch</p>
   </ol>
+</details>
 
+<details>
   <summary>What will happen to my data if I delete a clipboard?</summary>
   <ol>
     <p>Be careful when deleting a clipboard! All inventory sheets/orders tied to that clipboard will be deleted as well. Items will remain but you will need to reassign every item again</p>
   </ol>
+</details>
 
+<details>
   <summary>What should I do if I encounter an error?</summary>
   <ol>
     <p>If an error comes up while using the app, please contact the lead developer via LinkedIn found in the "contact" section</p>
@@ -132,6 +138,13 @@ To make an order
 <p>This is a screenshot of the ERD </p>
 
 <img src="app/assets/images/clipcloud_erd.png" alt="ERD Screenshot" style="height: 550px; width:750px;" />
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## Github Project
+
+<p>Here is a link to my workflow for ClipCloud [Github Project](https://github.com/users/salcasta/projects/1)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
