@@ -12,7 +12,7 @@
     <a href="https://github.com/salcasta/clipboards-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://www.loom.com/share/5915d059d9264424b244e0835e5a5a58?sid=cf3b4fcc-1bab-4ea1-aa48-229ef29eab12">View Demo</a>
     ·
     <a href="https://github.com/salcasta/clipboards-project/issues/new">Request Feature</a>
   </p>
