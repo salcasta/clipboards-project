@@ -6,7 +6,7 @@
       <div class="d-flex">
         <%= link_to "Edit", edit_clipboard_path(clipboard), class: "btn btn-outline-secondary fw-bold p-2" %>
         <%= link_to "Inventory Sheets", inventorysheets_path(clipboard_id: clipboard.id), class: "btn btn-outline-primary fw-bold p-2 mx-2" %>
-        <%= link_to "Delete", clipboard, class: "btn btn-outline-danger fw-bold p-2" %>
+        <%= button_to "Delete", clipboard, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger fw-bold p-2" %>
       </div>
     </div>
   </div>
