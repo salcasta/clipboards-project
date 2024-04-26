@@ -7,7 +7,7 @@
       <p class="card-text"><%= "#{vendor.rep_phone_number}" %></p>
       <div class="d-flex">
         <%= link_to "Edit", edit_vendor_path(vendor), class: "btn btn-outline-secondary fw-bold p-2 mx-2" %>
-        <%= link_to "Delete", vendor, class: "btn btn-outline-danger fw-bold p-2 mx-2" %>
+        <%= button_to "Delete", vendor, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger fw-bold p-2 mx-2" %>
       </div>
     </div>
   </div>

@@ -4,10 +4,6 @@ class VendorPolicy < ApplicationPolicy
     true
   end
 
-  def show?
-    user.id == record.user_id
-  end
-
   def create?
     true
   end

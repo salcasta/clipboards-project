@@ -13,7 +13,6 @@
 #
 class Inventorysheet < ApplicationRecord
   belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
-  has_many  :items, class_name: "Item", foreign_key: "inventory_sheets_id", dependent: :nullify
   has_many  :orders, class_name: "Order", foreign_key: "inventory_sheets_id", dependent: :destroy
   belongs_to :clipboard, required: true, class_name: "Clipboard", foreign_key: "clipboard_id"
 end

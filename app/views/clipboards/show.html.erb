@@ -1,14 +1,1 @@
-<div class="d-flex justify-content-center">
-  <h1 class="text-danger display-6">ARE YOU SURE YOU WANT TO DELETE THIS CLIPBOARD?</h1>
-</div>
 
-<div class="d-flex flex-column align-items-center py-5">
-    <h3 class="display-6">Back to safety</h3>
-    <%= link_to "Back to your clipboards", clipboards_path, class: "btn btn-outline-success fw-bold" %> 
-</div>
-
-<div class="d-flex flex-column align-items-center py-5">
-  <h3 class="display-6">There is no undoing this action</h3>
-  <h3 class="display-6">You will lose all inventory sheets tied to this clipboard</h3>
-  <%= button_to "Delete this clipboard", @clipboard, method: :delete, class: "btn btn-outline-danger fw-bold" %>
-</div>

@@ -26,10 +26,9 @@ class Item < ApplicationRecord
   before_save :adjust_ranks, if: :rank_changed?
 
   belongs_to :user, class_name: "User", foreign_key: "user_id"
-  has_many  :orders, class_name: "Order", foreign_key: "item_id", dependent: :nullify
+  has_many  :orders, class_name: "Order", foreign_key: "item_id", dependent: :destroy
   belongs_to :vendor, class_name: "Vendor", foreign_key: "vendor_id", optional: true
   belongs_to :clipboard, class_name: "Clipboard", foreign_key: "clipboard_id", optional: true
-  has_many  :inventory_sheets, class_name: "Inventorysheet", foreign_key: "item_id", dependent: :nullify
   has_many :clipboards, through: :inventory_sheets
 
   def adjust_ranks
