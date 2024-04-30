@@ -23,10 +23,6 @@
 #  vendor_id           :integer
 #
 class Item < ApplicationRecord
-  validates :price, numericality: true
-  validates :pack_size, numericality: true
-  validates :pack_cost, numericality: true
-
   before_save :adjust_ranks, if: :rank_changed?
   before_save :calculate_pack_cost
 
