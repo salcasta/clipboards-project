@@ -23,9 +23,6 @@ class ItemsController < ApplicationController
   # POST /items or /items.json
   def create
     @item = Item.new(item_params)
-    if @item.price.present? && @item.pack_size.present?
-      @item.pack_cost = @item.price * @item.pack_size
-    end
 
     respond_to do |format|
       if @item.save
