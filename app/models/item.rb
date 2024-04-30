@@ -8,10 +8,10 @@
 #  comment             :text
 #  item_size           :string
 #  label               :string
-#  pack_cost           :integer
-#  pack_size           :integer
+#  pack_cost           :float
+#  pack_size           :float
 #  par_level           :integer
-#  price               :integer
+#  price               :float
 #  product_type        :string
 #  rank                :integer
 #  unit                :string
@@ -23,7 +23,12 @@
 #  vendor_id           :integer
 #
 class Item < ApplicationRecord
+  validates :price, numericality: true
+  validates :pack_size, numericality: true
+  validates :pack_cost, numericality: true
+
   before_save :adjust_ranks, if: :rank_changed?
+  before_save :calculate_pack_cost
 
   belongs_to :user, class_name: "User", foreign_key: "user_id"
   has_many  :orders, class_name: "Order", foreign_key: "item_id", dependent: :destroy
@@ -37,4 +42,9 @@ class Item < ApplicationRecord
     end
   end
   
+  private
+
+  def calculate_pack_cost
+    self.pack_cost = self.price * self.pack_size
+  end
 end

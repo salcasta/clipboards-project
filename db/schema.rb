@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_21_004648) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_30_023344) do
   create_table "clipboards", force: :cascade do |t|
     t.string "area"
     t.integer "user_id"
@@ -33,10 +33,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_21_004648) do
     t.string "product_type"
     t.string "label"
     t.string "unit"
-    t.integer "price"
-    t.integer "pack_size"
+    t.float "price"
+    t.float "pack_size"
     t.string "item_size"
-    t.integer "pack_cost"
+    t.float "pack_cost"
     t.integer "user_id"
     t.string "area"
     t.integer "vendor_id"
