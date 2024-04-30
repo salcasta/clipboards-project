@@ -15,4 +15,8 @@ class Inventorysheet < ApplicationRecord
   belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
   has_many  :orders, class_name: "Order", foreign_key: "inventory_sheets_id", dependent: :destroy
   belongs_to :clipboard, required: true, class_name: "Clipboard", foreign_key: "clipboard_id"
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["date"]
+  end
 end

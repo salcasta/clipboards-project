@@ -5,10 +5,11 @@ class InventorysheetsController < ApplicationController
   # GET /inventorysheets or /inventorysheets.json
   def index
     if params[:clipboard_id]
-      @inventorysheets = current_user.inventorysheets.where(clipboard_id: params[:clipboard_id]).order(date: :desc)
+      @q = current_user.inventorysheets.where(clipboard_id: params[:clipboard_id]).ransack(params[:q])
     else
-      @inventorysheets = current_user.inventorysheets.all.order(date: :desc)
-    end    
+      @q = current_user.inventorysheets.ransack(params[:q])
+    end
+    @inventorysheets = @q.result.order(date: :desc).page(params[:inventorysheets_page]).per(9)
   end
 
   # GET /inventorysheets/1 or /inventorysheets/1.json
