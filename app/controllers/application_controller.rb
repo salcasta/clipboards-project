@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
+  # consider adding verify_authorized and verify_scoped
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   skip_forgery_protection
   before_action :authenticate_user!

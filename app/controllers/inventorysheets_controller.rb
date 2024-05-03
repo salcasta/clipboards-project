@@ -1,3 +1,4 @@
+# maybe InventorySheetsController would have been a better name (uppercase S)
 class InventorysheetsController < ApplicationController
   before_action :set_inventorysheet, only: %i[ show edit update destroy ]
   before_action { authorize @inventorysheet|| Inventorysheet }

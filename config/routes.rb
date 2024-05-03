@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
-  
+  # good clean routes, good use of helpers
   resources :orders
   resources :vendors
   resources :clipboards
