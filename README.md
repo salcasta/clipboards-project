@@ -71,12 +71,13 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 ## Getting Started
-
+<!-- Don't need the fluff -->
 Very easy to set up 
 
 ### Development
-
+<!-- Great! -->
 1. Fork the repository 
+<!-- need to bundle before -->
 2. Run <code>rake sample_data</code> in the terminal (will take a few seconds to complete)
 3. Run <code>bin/dev</code> in the terminal to run project locally 
 4. Go to "ports" and click on a forwarded address
@@ -91,7 +92,7 @@ To view a demo account
 2. login 
   * email: salcasta.dev.test@gmail.com
   * password: 21SDF2024 (casing matters)
-
+<!-- Nitpik: not sure if we need those here ; I think it adds noise
 1. Go to ClipCloud [ClipCloud](https://clipcloud.onrender.com/)
 2. Sign up
 3. Create a clipboard
@@ -106,7 +107,8 @@ To make an order
 4. Your order will be visible at the bottom of the corresponding inventory sheet
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+ -->
+<!-- Nice! I'm wondering if this FAQ should live on your live app though, since they are more related to your product. Here we want to keep it focused on the code part -->
 ## FAQ
 
 <details>
@@ -134,7 +136,7 @@ To make an order
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ERD
-
+<!-- might want to use the ERD gem so you can update this image along with the updates you add to your project -->
 <p>This is a screenshot of the ERD </p>
 
 <img src="app/assets/images/clipcloud_erd.png" alt="ERD Screenshot" style="height: 550px; width:750px;" />
@@ -143,7 +145,7 @@ To make an order
 
 
 ## Github Project
-
+<!-- nitpik: mixing markdown with HTML => the link isn't displayed correctly -->
 <p>Here is a link to my workflow for ClipCloud [Github Project](https://github.com/users/salcasta/projects/1)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -168,14 +170,14 @@ Don't forget to give the project a star! Thanks again!
 ## Contact
 
 Salvador Castaneda - [Linkedin](www.linkedin.com/in/salcasta)
-
+<!-- link to repo not needed? we get to this README only through the repo -->
 Project Link: [Github Repo](https://github.com/salcasta/clipboards-project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Acknowledgments
-
+<!-- Thank you :) -->
 A very big thank you to everyone at DPI, especially Thierry and Carlos
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

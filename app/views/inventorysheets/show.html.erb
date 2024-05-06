@@ -9,7 +9,7 @@
 <div class="d-flex justify-content-center mt-5 mb-3">
   <h2 class="display-6">Items</h2>
 </div>
-
+<!-- good use of partial! -->
 <%= render partial: "items_table" %>
 
 <%= paginate @items, param_name: "items_page" %>

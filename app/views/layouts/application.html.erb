@@ -17,12 +17,13 @@
   </head>
 
   <body>
-
+    <!-- neat! -->
     <%= render partial: "shared/navbar" %>
 
     <div class="container pb-5">
       <div class="row mb-4">
         <div class="col-md-6 offset-md-3">
+          <!-- this could be cleaner if both alerts were in the partial -->
           <% if notice.present? %>
             <%= render partial: "shared/flash", locals: { message: notice, css_class: "success" } %>
           <% end %>

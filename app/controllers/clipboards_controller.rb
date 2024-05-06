@@ -1,5 +1,6 @@
 class ClipboardsController < ApplicationController
   before_action :set_clipboard, only: %i[ show edit update destroy ]
+  # good job keeping it DRY
   before_action { authorize @clipboard|| Clipboard }
 
   # GET /clipboards or /clipboards.json
